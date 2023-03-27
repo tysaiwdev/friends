@@ -160,7 +160,7 @@ function searchFriend() {
     
 }
 
-function send() {
+function send() { //a
     const input = document.getElementById('input-s')
     window.navigator.geolocation.getCurrentPosition((a) => { 
         if(input.value.length > 1) {
